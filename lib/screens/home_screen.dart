@@ -16,10 +16,23 @@ class _HomeScreenState extends State<HomeScreen> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  int _currentIndex = 0;
+  final List<Widget> _screens = [
+    HomeScreen(),
+    // SearchScreen(),
+    // FavoriteScreen(),
+    // ProfileScreen(),
+
+  ];
   Future<void> signOut(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
     Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => SignInScreen()));
+  }
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 
   @override
@@ -27,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('HOME'),
-        backgroundColor: Theme.of(context).colorScheme.outlineVariant,
+        backgroundColor: Colors.deepOrangeAccent,
         actions: [
           IconButton(
             onPressed: () {
@@ -43,7 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
           if (snapshot.hasError) {
             return Text('Error: ${snapshot.error}');
           }
-
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
               return Text('Loading...');
@@ -91,12 +103,37 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context)  => AddPostScreen()));
         },
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.deepOrangeAccent,
         tooltip: 'Add Post',
         child: const Icon(
           Icons.add,
           color: Colors.black,
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        selectedItemColor: Colors.deepOrangeAccent,
+        unselectedItemColor: Colors.deepOrangeAccent.shade100,
+        showSelectedLabels: true,
       ),
     );
   }

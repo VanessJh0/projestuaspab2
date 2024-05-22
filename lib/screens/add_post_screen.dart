@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class AddPostScreen extends StatefulWidget {
+class AddPostScreen  extends StatefulWidget {
   @override
   _AddPostScreenState createState() => _AddPostScreenState();
 }
@@ -21,16 +21,18 @@ class _AddPostScreenState extends State<AddPostScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Post'),
-        backgroundColor: Theme.of(context).colorScheme.outlineVariant,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomeScreen()));
-            },
-            icon: const Icon(Icons.arrow_back),
-          ),
-        ],
+        
+        title: Text('Add Post',style: TextStyle(color: Colors.white),),
+        backgroundColor: Color.fromARGB(255, 67, 118, 108),
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomeScreen()));
+        //     },
+        //     padding: EdgeInsets.symmetric(horizontal: ),
+        //     icon: const Icon(Icons.arrow_back),
+        //   ),
+        // ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -45,7 +47,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   child: _image != null
                       ? Image.file(File(_image!.path))
                       // ? Image.network(_image!.path)
-                      : Image.asset('assets/images/add_photo.png',color: Colors.grey,),
+                      : Image.asset('assets/images/add_photo.png',color: Colors.grey, width: 200,),
 
 
                 ),
@@ -62,7 +64,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
               SizedBox(height: 16),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black12,
+                  backgroundColor: Color.fromARGB(255, 67, 118, 108),
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                   textStyle: const TextStyle(
