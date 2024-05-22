@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "891168595577",
+    "firebase_url": "https://wni-db-215e3-default-rtdb.firebaseio.com",
+    "project_id": "wni-db-215e3",
+    "storage_bucket": "wni-db-215e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891168595577:android:b492fc8fc331d61a43fea8",
+        "android_client_info": {
+          "package_name": "com.example.projestuaspab2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891168595577-lj4g6kvgmes9upreqohcneg0nmrm48al.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEcGWMTw_JDDVCmehE1bt1gyr9aB4pXgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891168595577-lj4g6kvgmes9upreqohcneg0nmrm48al.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "891168595577-s0qcbmcu0ecpenb1pu5lcgjvo6hc3cn1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.projestuaspab2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
