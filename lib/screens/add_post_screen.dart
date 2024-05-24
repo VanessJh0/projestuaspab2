@@ -23,16 +23,16 @@ class _AddPostScreenState extends State<AddPostScreen> {
       appBar: AppBar(
         
         title: Text('Add Post',style: TextStyle(color: Colors.white),),
-        backgroundColor: Color.fromARGB(255, 67, 118, 108),
-        // actions: [
-        //   IconButton(
-        //     onPressed: () {
-        //       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomeScreen()));
-        //     },
-        //     padding: EdgeInsets.symmetric(horizontal: ),
-        //     icon: const Icon(Icons.arrow_back),
-        //   ),
-        // ],
+        backgroundColor: Colors.deepOrangeAccent,
+        // backgroundColor: Color.fromARGB(255, 67, 118, 108),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomeScreen()));
+            },
+            icon: const Icon(Icons.arrow_back),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -64,7 +64,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
               SizedBox(height: 16),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 67, 118, 108),
+                  backgroundColor: Colors.deepOrangeAccent,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                   textStyle: const TextStyle(

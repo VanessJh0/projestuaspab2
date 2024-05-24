@@ -70,6 +70,7 @@ flutter:
   assets:
     - assets/images/add_photo.png
     - assets/images/google.png
+    - assets/images/lgoFix2.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
